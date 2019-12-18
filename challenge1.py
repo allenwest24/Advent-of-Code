@@ -1,3 +1,4 @@
+# Uses input file 1
 import sys
 import os
 import math
