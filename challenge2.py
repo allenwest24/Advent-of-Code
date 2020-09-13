@@ -1,22 +1,19 @@
-# Uses input file 1
 import sys
 import os
 import math
 
-filepath = sys.argv[1]
+filepath = 'C:\\Users\\Allen\\Desktop\\input1.txt'
 
 total = 0
 with open(filepath) as fp:
+    cnt = 0
     for line in fp:
-        num = float(line)
-        num = math.floor(num / 3)
-        num = num - 2
-        total += num
-        while num > -1:
-            num = math.floor(num / 3)
-            num -= 2
-            if num <= 0:
-                break
+        subtotal = (math.floor(int(line)/3) - 2)
+        total += subtotal
+        while subtotal > 0:
+            subtotal = (math.floor(subtotal/3) - 2)
+            if subtotal > 0:
+                total += subtotal
             else:
-                total += num
+                break
 print(total)
