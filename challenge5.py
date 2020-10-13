@@ -1,74 +1,46 @@
-import sys
-import os
-import math
+def createCoords(wire):
+    coords = []
+    curr = []
+    posx = 0
+    posy = 0
+    num = 0
+    for move in wire:
+        num = move[1:]
+        if move[0] == 'U':
+            for x in range(int(num)):
+                posy += 1
+                curr = [posx, posy]
+                coords.append(curr)
+        if move[0] == 'D':
+            for x in range(int(num)):
+                posy -= 1
+                curr = [posx, posy]
+                coords.append(curr)
+        if move[0] == 'L':
+            for x in range(int(num)):
+                posx -= 1
+                curr = [posx, posy]
+                coords.append(curr)
+        if move[0] == 'R':
+            for x in range(int(num)):
+                posx += 1
+                curr = [posx, posy]
+                coords.append(curr)
+    return coords
 
-filepath = sys.argv[1]
-
-total = 0
-besttotal = 0
-with open(filepath) as fp:
-    line = fp.readline()
-    currentline = line.split(",")
-    myarray = []
-    ii = 0
-    while ii < 137:
-        myarray.append(currentline[ii])
-        ii += 1
-    print('array created')
-    jj = 0
-    vert = 0
-    horz = 0
-    coordTracker1 = []
-    while jj < 137:
-        temp = myarray[jj]
-        way = temp[0]
-        if way == 'U':
-            vert += int(temp[1:])
-        if way == 'D':
-            vert -= int(temp[1:])
-        if way == 'L':
-            horz -= int(temp[1:])
-        if way == 'R':
-            horz += int(temp[1:])
-        coordTracker1.append(horz)
-        coordTracker1.append(vert)
-        jj += 1
-    #print(coordTracker1)
-
-    line = fp.readline()
-    currentline = line.split(",")
-    myarray = []
-    ii = 0
-    while ii < 137:
-        myarray.append(currentline[ii])
-        ii += 1
-    print('array created')
-    jj = 0
-    vert = 0
-    horz = 0
-    coordTracker2 = []
-    while jj < 137:
-        temp = myarray[jj]
-        way = temp[0]
-        if way == 'U':
-            vert += int(temp[1:])
-        if way == 'D':
-            vert -= int(temp[1:])
-        if way == 'L':
-            horz -= int(temp[1:])
-        if way == 'R':
-            horz += int(temp[1:])
-        coordTracker2.append(horz)
-        coordTracker2.append(vert)
-        jj += 1
-    #print(coordTracker2)
-
-    for ii in range(68):
-        for jj in range(68):
-            if coordTracker1[2 * ii] == coordTracker2[2 * jj] and coordTracker1[2 * ii + 1] == coordTracker2[2 * jj + 1]:
-                intsersect = abs(coordTracker1[2 * ii]) + abs(coordTracker1[2 * ii + 1])
-                print(intersect)
-                jj += 1
-            ii += 1
-       
-
+with open('challenge5input.txt', 'r') as fp:
+    curr = 0
+    wire1 = ''
+    wire2 = ''
+    for line in fp:
+        if curr == 0:
+            wire1 = line
+            curr += 1
+        else:
+            wire2 = line
+    wire1 = createCoords(wire1.split(','))
+    wire2 = createCoords(wire2.split(','))
+    for coordA in wire1:
+        for coordB in wire2:
+            if coordA == coordB:
+                print(coordA)
