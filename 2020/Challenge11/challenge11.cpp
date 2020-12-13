@@ -3,18 +3,7 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
-// Helper method for deciding whether a string is a number.
-bool isNumeric(string str) {
-	for (int ii = 0; ii < str.length(); ii++) {
-		if (!isdigit(str[ii])) {
-			return false;
-		}
-	}
-	return true;
-}
-			
+using namespace std;			
 
 int main () {
 	// Load the file.
