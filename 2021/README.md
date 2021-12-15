@@ -1,0 +1,1 @@
+3rd year! This year I feel like I can get much further than the past two. I know about 10 languages now so I want to pick something low level, new, and ingrained in the technologies I'm interested in (Kubernetes mainly). Here we  "Go"!
