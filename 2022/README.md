@@ -1,2 +1,5 @@
 # Here we go again!
 This is my fourth year of advent of code and I want to take it on in the hardest language I've attempted yet, C! Because I am learning how to reverse engineer this year I would like to go throught eh challenges in the lowest-level language I know (besides Assembly). This should be pretty difficult because I haven't used C in over 2 years. In past years I have used Python, C++, and Go (in that order) with an off-season attempt of the 2018 year in Rust. C will be a whole new beast and I'm excited for it. My friend Tom will be joining me this year and is going to be doing it in Python. How fun.
+
+UPDATE:
+Turns out I forgot how much I despise working in C. That, combined with the fact that I am pretty far behind due to moving apartments, leads me to the conclusion that I am going to catch up in Python then switch to Go for the remainder of this advent. Maybe I'll try C again someday but I just do not have the time for it right now with school and work and moving! Oh well!
