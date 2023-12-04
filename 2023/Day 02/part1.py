@@ -11,7 +11,7 @@ def main():
     # Open the input file as read only.
     with open('./input.txt', 'r') as f:
 
-        # Reads each line into an array without the newline character 
+        # Reads each line into an array 
         lol = f.readlines()
         for ii in range(len(lol)):
             good_game = True
@@ -27,9 +27,6 @@ def main():
             if good_game:
                 out += ii + 1
     print(out)
-
-
-
     
 if __name__ == "__main__":
     main() 
